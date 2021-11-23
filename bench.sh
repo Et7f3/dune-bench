@@ -1,11 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
-if [[ $# -gt 0 ]]; then
-    DUNE="$1"
-else
-    DUNE=dune
-fi
-
-exec $DUNE build --release @install
+exec ${1:-dune} build --release @install
